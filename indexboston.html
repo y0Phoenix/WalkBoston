@@ -1,0 +1,44 @@
+</head>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./data.js"></script>
+    <script id="walkboston" src="./walkboston.js"></script>
+    <script src="./searchlistboston.js"></script>
+    <script src="./wholelist.js"></script>
+<head>
+<body id="body1">
+    <div id="searchform" class="container">
+        <img src="boston.png" class="pic">
+        <h3>Type in the amounts you are looking for in the search</h3>
+        <form id="form" class="form">
+            Minumum Amount: <input type="text" id="min" placeholder="0.00" style="color: white;"/>
+            <button class="icon" onclick="clearinputmin(e)" id="minclear" ><i class="fa fa-close"></i></button><br>
+            Maximum Amount: <input type="text" id="max" placeholder="0.00" style="color: white;"/>
+            <button class="icon" onclick="clearinputmax(e)" style="top: 140px;" id="maxclear"><i class="fa fa-close"></i></button><br>
+            <input type="submit" value="Submit" id="submit" class="submitbutton">
+            </a>
+        </form>
+        <button id="wholelistbutton" type="button" onclick="wholelist()" class="buttons" style="top: 150px; left: 60%">View the whole list</button>
+    </div>
+    <div id = "container" class="container" style="background-color: rgb(70, 70, 70);">
+    </div>
+    <script>
+        document.getElementById('form').addEventListener('submit', search);
+        walkBoston();
+        function clearlist() {
+            let div = document.getElementById('container');
+            div.innerHTML = "";
+            walkBoston();
+        }
+        function clearinputmin(e) {
+            e.preventDefault();
+            let input = document.getElementById('min').value = '';
+        }
+        function clearinputmax(e) {
+            e.preventDefault();
+            let input = document.getElementById('max').value = '';
+        }
+    </script>
+</body>
+
+
